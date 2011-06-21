@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomepwnerAppDelegate : NSObject <UIApplicationDelegate> {
+@class ItemsViewController;
 
+@interface HomepwnerAppDelegate : NSObject <UIApplicationDelegate> 
+{
+    ItemsViewController * itemsViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

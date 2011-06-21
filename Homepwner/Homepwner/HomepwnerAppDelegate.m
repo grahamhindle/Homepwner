@@ -7,6 +7,7 @@
 //
 
 #import "HomepwnerAppDelegate.h"
+#import "ItemsViewController.h"
 
 @implementation HomepwnerAppDelegate
 
@@ -15,7 +16,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Create a ItemsViewController.
+    itemsViewController = [[ItemsViewController alloc] init];
+    
+    //Place itemsViewController's tableView in the window hierarchy
+    [self.window setRootViewController:itemsViewController];
+    
+    //We won't release itemsViewController here ,as we have an 
+    // instance variable that points to it as well
+    // and thetefore truly had 2 owners
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
